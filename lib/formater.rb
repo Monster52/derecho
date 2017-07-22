@@ -1,0 +1,28 @@
+class Formater
+	attr_reader :city, :state
+
+	def initialize city, state
+		@city = city
+		@state = state
+	end
+
+	def create_state_city_string
+		"#{format_state(@state)}/#{format_city(@city)}"
+	end
+
+	private
+
+		def format_state state
+			state_city = ""
+			state = state.upcase
+		end
+
+		def format_city city
+			fcity = city.split(" ")
+			if fcity.length > 1
+				fcity.map(&:capitalize).join(" ").gsub(" ", "_")
+			else
+				fcity
+			end
+		end
+end
