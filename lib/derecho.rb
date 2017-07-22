@@ -1,6 +1,4 @@
-require "derecho/version"
-
-  class Derecho
+class Derecho
 	require_relative 'formater'
 	require 'httparty'
 	require 'pry'
