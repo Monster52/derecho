@@ -11,8 +11,8 @@ class Derecho
 		@message = Formater.new(@city, @state)
 	end
 
-	def response
-		wunderground_api_key = "2bbce63b5e0caa51"
+	def response API_KEY
+		
 
 		url = "http://api.wunderground.com/api/#{wunderground_api_key}/forecast10day/q/#{message.create_state_city_string}.json"
 		response = HTTParty.get(url)
