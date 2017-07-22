@@ -31,7 +31,7 @@ require "derecho/version"
 			icon = day["icon"]
 			icon_img = day["icon_url"]
 
-			puts "#{weekday} will be #{condition} with a high of #{temp_high} and a low of #{temp_low}.")
+			puts "#{weekday} will be #{condition} with a high of #{temp_high} and a low of #{temp_low}."
 		end
 	end
 
