@@ -3,18 +3,17 @@ class Derecho
 	require 'httparty'
 	require 'pry'
 
-	attr_reader :city, :state, :message
+	attr_reader :access_token, :city, :state, :message
 
-	def initialize city, state
+	def initialize access_token=nil, city, state
+		@access_token = access_token || ENV["WUNDERGROUND_API_KEY"]
 		@city = city
 		@state = state
 		@message = Formater.new(@city, @state)
 	end
 
-	def response API_KEY
-		
-
-		url = "http://api.wunderground.com/api/#{wunderground_api_key}/forecast10day/q/#{message.create_state_city_string}.json"
+	def response
+		url = "http://api.wunderground.com/api/#{access_token}/forecast10day/q/#{message.create_state_city_string}.json"
 		response = HTTParty.get(url)
 		response["forecast"].to_a
 	end
