@@ -14,8 +14,8 @@ class Derecho
 
 	def response
 		url = "http://api.wunderground.com/api/#{access_token}/forecast10day/q/#{message.create_state_city_string}.json"
-		response = HTTParty.get(url)
-		response["forecast"].to_a
+		results = HTTParty.get(url)
+		results["forecast"].to_a
 	end
 
 	def get_basic_weather_data
@@ -28,7 +28,7 @@ class Derecho
 				results.push("#{day_string[0]} will be #{day["fcttext"]}")
 			end
 		end
-		results
+	 results
 	end
 
 	def get_weekday

@@ -18,11 +18,11 @@ class Formater
 		end
 
 		def format_city city
-			fcity = city.split(" ")
-			if fcity.length > 1
+			if city.length > 1
+				fcity = city.split(" ")
 				fcity.map(&:capitalize).join(" ").gsub(" ", "_")
 			else
-				fcity
+				city
 			end
 		end
 end
