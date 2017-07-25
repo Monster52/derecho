@@ -21,11 +21,33 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To begin using Derecho, grab an api key from wundergroun weather and save it as an environment variable.
+
+Instantiate the Derecho class with:
+```ruby
+weather = Derecho.new("<api_key", city, state)
+```
+
+Once the weather object has been created, you can start to pull data from the API with these commands
+
+```ruby
+weather.get_basic_weather_data
+weather.get_daily_highs
+weather.get_daily_lows
+weather.get_weekdays
+```
+
+These methods all return an array 0 - 9.
+
+`get_basic_weather_data` returns the forecast/conditions for each day. (10 day forecast)
+
+`get_daily_highs` / `get_daily_lows` returns an array of the highs or lows for each day corresponding to the days of the week with the current day starting at the 0 index.
+
+`get_weekdays` returns an array of the days with the current day starting at index 0
 
 ## Development
 
-Derecho simple [demo](https://secret-caverns-98581.herokuapp.com/forecasts)
+Derecho simple [demo](https://secret-caverns-98581.herokuapp.com/forecasts	)
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
