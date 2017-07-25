@@ -21,7 +21,8 @@ Or install it yourself as:
 
 ## Usage
 
-To begin using Derecho, grab an api key from wundergroun weather and save it as an environment variable.
+To begin using Derecho, grab an api key from [wunderground](https://www.wunderground.com/?apiref=28c522f84f4bd5f2
+) weather and save it as an environment variable.
 
 Instantiate the Derecho class with:
 ```ruby
